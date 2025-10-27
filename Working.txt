@@ -1,0 +1,5 @@
+This is the way how it works :
+  -> You train and save your model as model.pkl.
+  -> app.py loads the model and exposes a /predict endpoint.
+  -> requirements.txt ensures all dependencies are installed.
+  -> Dockerfile packages everything into a container.

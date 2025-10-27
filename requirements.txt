@@ -1,0 +1,4 @@
+# In this we can lists all Python packages that our app needs and Docker uses this to install further dependencies.
+fastapi
+uvicorn
+scikit-learn
