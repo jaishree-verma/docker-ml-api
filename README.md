@@ -7,10 +7,36 @@ This project demonstrates how to train a machine learning model using scikit-lea
 
 ### This project contains 4 files: train_model.py , model.pkl , app.py , requirements.txt , DockerFile , README.md 
 #### -> train_model.py
-        -> Trains your ML model and saves it as a .pkl file.
+        -> Trains your ML model and saves it as a .pkl file
         -> Loads the Iris dataset using scikit-learn
         -> Trains a logistic regression model
         -> Serializes the model using pickle and saves it as model.pkl
+#### -> model.pkl
+        -> Stores your trained ML model in binary format
+        -> This is the output of train_model.py
+        -> Used by app.py to make predictions
+        -> Should be kept in sync with your training logic
+### -> app.py
+        -> Serves your ML model as a REST API using FastAPI
+        -> Loads model.pkl
+        -> Defines a /PREDICT endpoint that accepts JSON input
+        -> Returns predictions as JSON output
+### -> requirements.txt
+        -> Lists all Python dependencies needed for your project.
+        -> fastapi for the web framework
+        -> uvicorn as the ASGI server
+        -> scikit-learn for ML training and inference
+### -> DockerFile
+        -> Defines how to build your Docker image.
+        -> Starts from a base Python image
+        -> Sets the working directory
+        -> Copies your project files
+        -> Installs dependencies
+        -> Launches the FastAPI app with uvicorn
+### -> README.md
+        -> Explains what the project does
+        -> Shows how to run it locally and test the API
+
 
 ## 🧪 How to Run Locally
 
