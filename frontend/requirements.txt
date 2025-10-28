@@ -1,0 +1,3 @@
+# These needs to be installed for UI 
+streamlit
+requests
