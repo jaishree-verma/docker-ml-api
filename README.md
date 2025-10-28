@@ -5,13 +5,15 @@ This project demonstrates how to train a machine learning model using scikit-lea
 
 ---
 
-### This project contains 4 files: train_model.py , model.pkl , app.py , requirements.txt , DockerFile , README.md 
-#### -> train_model.py
+#### This project contains 4 files: train_model.py , model.pkl , app.py , requirements.txt , DockerFile , README.md
+
+### -> train_model.py
         -> Trains your ML model and saves it as a .pkl file
         -> Loads the Iris dataset using scikit-learn
         -> Trains a logistic regression model
         -> Serializes the model using pickle and saves it as model.pkl
-#### -> model.pkl
+        #### You run this once to generate the model before building the Docker image.
+### -> model.pkl
         -> Stores your trained ML model in binary format
         -> This is the output of train_model.py
         -> Used by app.py to make predictions
