@@ -1,4 +1,7 @@
-__pycache__/
-*.pyc
+echo "__pycache__/
 *.pkl
 .env
+node_modules/
+dist/
+.vscode/
+.DS_Store" > .gitignore
