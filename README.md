@@ -140,11 +140,10 @@ prediction
 To run full app frontend + backend : 
 docker-compose up --build
 ```
-####  → frontend : http://localhost:8501
-####  → backend  : http://localhost:5000/docs
+#####  → frontend : http://localhost:8501
+#####  → backend  : http://localhost:5000/docs
 
-```
-### Final DockerFile 
+#### 8. Final DockerFile 
 ```bash
 FROM python:3.10
 WORKDIR /app
