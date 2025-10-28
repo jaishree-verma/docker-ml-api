@@ -1,7 +1,6 @@
-# 🚀 Dockerized ML Model API with FastAPI
+#  Dockerized ML Model API with FastAPI
 
 This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs.
-
 
 ---
 
