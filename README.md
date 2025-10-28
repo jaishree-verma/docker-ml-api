@@ -33,6 +33,7 @@ This project demonstrates how to train a machine learning model using scikit-lea
         -> fastapi for the web framework
         -> uvicorn as the ASGI server
         -> scikit-learn for ML training and inference
+        
         Docker uses this to install everything inside the container.
 ### -> DockerFile
         -> Defines how to build your Docker image.
@@ -41,6 +42,7 @@ This project demonstrates how to train a machine learning model using scikit-lea
         -> Copies your project files
         -> Installs dependencies
         -> Launches the FastAPI app with uvicorn
+       
         This file turns your local project into a portable container.
 ### -> README.md
         -> Explains what the project does
@@ -50,6 +52,40 @@ This project demonstrates how to train a machine learning model using scikit-lea
 ## 🧪 How to Run Locally
 
 ### 1. Train the model
+        -> python train_model.py
+        -> O/p = This creates a serialized model your API will use.
+### 2. Build Docker Image
+        -> docker build -t ml-api .
+        -> O/P = This reads your Dockerfile, installs dependencies, and packages everything into a container.
+### 3. Run Docker Image 
+        -> docker run -p 5000:5000 ml-api
+        -> O/P = INFO: Uvicorn running on http://0.0.0.0:5000 (That means your FastAPI app is live inside Docker)
+### 4. Test the API
+        -> Invoke-RestMethod -Uri http://localhost:5000/predict `
+           -Method POST `
+           -ContentType "application/json" `
+           -Body '{"features": [5.1, 3.5, 1.4, 0.2]}'
+        -> O/P = {"prediction": [0]} (This means your model is working and returning predictions)
+### 5. Installations 
+        -> pip install -r requirements.txt
+           -> O/P = This install all dependicies inside requirements.txt = fastapi uvicorn scikit-learn
+        -> Docker image 
+           -> FROM python:3.10
+              -> O/P = Starts with an official Python 3.10 image as the base.
+           -> WORKDIR /app
+              -> O/P = Sets the working directory inside the container to /app.
+        -> COPY . /app
+           -> O/P = Copies all files from your local project folder into the container’s /app directory.
+        -> RUN pip install --no-cache-dir -r requirements.txt
+           -> O/P = Installs your Python dependencies inside the container, just like you would locally.
+        -> CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
+           -> O/P = Tells Docker to run your FastAPI app using uvicorn when the container starts.
+### Summary 
+        -> Together, this setup:
+        -> Installs dependencies
+        -> Packages your code
+        -> Launches your API in a container
+### Final Run 
 ```bash
 python train_model.py
 docker build -t ml-api .
@@ -58,7 +94,9 @@ Invoke-RestMethod -Uri http://localhost:5000/predict `
   -Method POST `
   -ContentType "application/json" `
   -Body '{"features": [5.1, 3.5, 1.4, 0.2]}'
-pip install -r requirements.txt
+```
+### Final DockerFile 
+```bash
 FROM python:3.10
 WORKDIR /app
 COPY . /app
