@@ -5,6 +5,8 @@ This project demonstrates how to train a machine learning model using scikit-lea
 
 ---
 
+### This project contains 4 files: train_model.py , model.pkl , app.py , requirements.txt , DockerFile , README.md 
+
 ## 🧪 How to Run Locally
 
 ### 1. Train the model
