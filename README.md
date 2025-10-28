@@ -1,11 +1,28 @@
 #  Dockerized ML Model API with FastAPI
 
-This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs.
+This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker. This API turns raw machine learning predictions into a simple, accessible service. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
+1. Trains model
 
+   a.) Uses scikit-learn to train a logistic regression model on the Iris dataset.
+
+   b.) Saves the model as model.pkl.
+3. Serves predictions via FastAPI
+
+   a.) Defines a /predict endpoint that accepts JSON input.
+
+   b.) Loads the trained model and returns predictions based on input features.
+4. Runs inside Docker
+
+   a.) Uses a Dockerfile to package everything (code + dependencies).
+
+   b.) Makes the API portable and easy to deploy anywhere.
+6. Accepts requests and returns results
+
+   a.) You can send feature data (like [5.1, 3.5, 1.4, 0.2]) and get a prediction.
+
+   b.) The API responds with the predicted class label.
 ---
-
-#### This project contains 5 files: train_model.py , model.pkl , app.py , requirements.txt , DockerFile , README.md
-
+#### How it works :
 ### -> train_model.py
         -> Trains your ML model and saves it as a .pkl file
         -> Loads the Iris dataset using scikit-learn
