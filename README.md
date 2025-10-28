@@ -4,18 +4,22 @@ This project demonstrates how to train a machine learning model using scikit-lea
 1. Trains model
 
    a.) Uses scikit-learn to train a logistic regression model on the Iris dataset.
+
    b.) Saves the model as model.pkl.
-2. Serves predictions via FastAPI
+3. Serves predictions via FastAPI
 
    a.) Defines a /predict endpoint that accepts JSON input.
+
    b.) Loads the trained model and returns predictions based on input features.
-3. Runs inside Docker
+4. Runs inside Docker
 
    a.) Uses a Dockerfile to package everything (code + dependencies).
+
    b.) Makes the API portable and easy to deploy anywhere.
-4. Accepts requests and returns results
+6. Accepts requests and returns results
 
    a.) You can send feature data (like [5.1, 3.5, 1.4, 0.2]) and get a prediction.
+
    b.) The API responds with the predicted class label.
 ---
 #### How it works :
