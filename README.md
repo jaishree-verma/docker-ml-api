@@ -92,7 +92,12 @@ docker run -p 5000:5000 ml-api
 Invoke-RestMethod -Uri http://localhost:5000/predict `
   -Method POST `
   -ContentType "application/json" `
-  -Body '{"features": [5.1, 3.5, 1.4, 0.2]}'
+  -Body '{"features": [5.1, 3.5, 1.4, 0.2]}''
+
+O/P :- 
+prediction
+----------
+{0}  
 ```
 ### Final DockerFile 
 ```bash
