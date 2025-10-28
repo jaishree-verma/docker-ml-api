@@ -44,14 +44,14 @@ This project demonstrates how to train a machine learning model using scikit-lea
         -> Launches the Streamlit app
 
 ###  Backend (FastAPI)
-### → `train_model.py`
+#### → `train_model.py`
         -> Trains your ML model and saves it as a .pkl file
         -> Loads the Iris dataset using scikit-learn
         -> Trains a logistic regression model
         -> Serializes the model using pickle and saves it as model.pkl
         
         Run this once to generate the model before building the Docker image.
-### → `model.pkl`
+#### → `model.pkl`
         -> Stores your trained ML model in binary format
         -> This is the output of train_model.py
         -> Used by app.py to make predictions
@@ -65,14 +65,14 @@ This project demonstrates how to train a machine learning model using scikit-lea
         -> Returns predictions as JSON output
         
         This is the brain of API - it connects users to your model.
-### → `requirements.txt`
+#### → `requirements.txt`
         -> Lists all Python dependencies needed for your project.
         -> fastapi for the web framework
         -> uvicorn as the ASGI server
         -> scikit-learn for ML training and inference
         
         Docker uses this to install everything inside the container.
-### → `DockerFile`
+#### → `DockerFile`
         -> Defines how to build your Docker image.
         -> Starts from a base Python image
         -> Sets the working directory
@@ -84,23 +84,23 @@ This project demonstrates how to train a machine learning model using scikit-lea
 
 ## How to Run Locally :
 
-### 1. Train the model
+#### 1. Train the model
         -> python train_model.py
         -> O/p = This creates a serialized model your API will use.
-### 2. Build Docker Image
+#### 2. Build Docker Image
         -> docker build -t ml-api .
         -> O/P = This reads your Dockerfile, installs dependencies, and packages everything into a container.
-### 3. Run Docker Image 
+#### 3. Run Docker Image 
         -> docker run -p 5000:5000 ml-api
         -> O/P = INFO: Uvicorn running on http://0.0.0.0:5000 (That means your FastAPI app is live inside Docker)
-### 4. Test the API
+#### 4. Test the API
         -> Invoke-RestMethod -Uri http://localhost:5000/predict `
            -Method POST `
            -ContentType "application/json" `
            -Body '{"features": [5.1, 3.5, 1.4, 0.2]}'
         -> O/P = {"prediction": [0]} (This means your model is working and returning predictions)
-### 5. Installations 
-#### Frontend + Backend
+#### 5. Installations 
+#### → Frontend + Backend
         -> pip install -r requirements.txt
            -> O/P = This install all dependicies inside requirements.txt in frontend & backend 
         -> Docker image 
@@ -114,12 +114,12 @@ This project demonstrates how to train a machine learning model using scikit-lea
            -> O/P = Installs your Python dependencies inside the container, just like you would locally.
         -> CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
            -> O/P = Tells Docker to run your FastAPI app using uvicorn when the container starts.
-### Summary 
+#### 6. Summary 
         -> Together, this setup works with frontend & backend 
         -> Installs dependencies
         -> Packages your code
         -> Launches your API in a container
-### Final Run 
+#### 7. Final Run 
 ```bash
 Backend (for api testing only ):
 cd backend
@@ -152,7 +152,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
 ```
-### Summary Table 
+#### Summary Table 
 
 | Component |         Tech            |             Purpose                          |
 |-----------|-------------------------|----------------------------------------------|
