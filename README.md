@@ -1,6 +1,8 @@
-#  Dockerized ML Model API with FastAPI
+#  Dockerized ML Model API with FastAPI + Streamlit 
 
-This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker. This API turns raw machine learning predictions into a simple, accessible service. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
+### Live : 
+This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker integrated with simple streamlit & requests UI. This API turns raw machine learning predictions into a simple, accessible service. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
+
 1. Trains model
 
    a.) Uses scikit-learn to train a logistic regression model on the Iris dataset.
@@ -22,7 +24,24 @@ This project demonstrates how to train a machine learning model using scikit-lea
 
    b.) The API responds with the predicted class label.
 ---
-#### How it works :
+
+## How it works :
+
+##  Frontend (Streamlit / Requests)
+### → `streamlit_app.py`
+        -> Provides a user interface to input iris features  
+        -> Sends data to the FastAPI backend  
+        -> Displays predicted species with a friendly message  
+
+### → `requirements.txt`
+        -> Lists frontend dependencies: `streamlit`, `requests`  
+
+### → `Dockerfile`
+        -> Builds the frontend container  
+        -> Installs dependencies  
+        -> Launches the Streamlit app
+
+##  Backend (FastAPI)
 ### -> train_model.py
         -> Trains your ML model and saves it as a .pkl file
         -> Loads the Iris dataset using scikit-learn
@@ -65,7 +84,7 @@ This project demonstrates how to train a machine learning model using scikit-lea
         -> Shows how to run it locally and test the API
 
 
-## 🧪 How to Run Locally
+## How to Run Locally :
 
 ### 1. Train the model
         -> python train_model.py
@@ -83,8 +102,9 @@ This project demonstrates how to train a machine learning model using scikit-lea
            -Body '{"features": [5.1, 3.5, 1.4, 0.2]}'
         -> O/P = {"prediction": [0]} (This means your model is working and returning predictions)
 ### 5. Installations 
+#### Frontend + Backend
         -> pip install -r requirements.txt
-           -> O/P = This install all dependicies inside requirements.txt = fastapi uvicorn scikit-learn
+           -> O/P = This install all dependicies inside requirements.txt in frontend & backend 
         -> Docker image 
            -> FROM python:3.10
               -> O/P = Starts with an official Python 3.10 image as the base.
@@ -97,15 +117,18 @@ This project demonstrates how to train a machine learning model using scikit-lea
         -> CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
            -> O/P = Tells Docker to run your FastAPI app using uvicorn when the container starts.
 ### Summary 
-        -> Together, this setup:
+        -> Together, this setup works with frontend & backend 
         -> Installs dependencies
         -> Packages your code
         -> Launches your API in a container
 ### Final Run 
 ```bash
+Backend (for api testing only ):
+cd backend
 python train_model.py
 docker build -t ml-api .
 docker run -p 5000:5000 ml-api
+Test API : 
 Invoke-RestMethod -Uri http://localhost:5000/predict `
   -Method POST `
   -ContentType "application/json" `
@@ -114,7 +137,14 @@ Invoke-RestMethod -Uri http://localhost:5000/predict `
 O/P :- 
 prediction
 ----------
-{0}  
+{0}
+
+To run full app frontend + backend : 
+docker-compose up --build
+```
+#### frontend : http://localhost:8501
+#### backend  : http://localhost:5000/docs
+
 ```
 ### Final DockerFile 
 ```bash
@@ -123,3 +153,11 @@ WORKDIR /app
 COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
+```
+### Summary Table 
+
+| Component |         Tech            |             Purpose                          |
+|-----------|-------------------------|----------------------------------------------|
+| Backend   | FastAPI + scikit-learn  | Serves ML predictions via REST API           |
+| Frontend  | Streamlit + requests    | UI for entering features and viewing results |
+| Container | Docker + Docker Compose | Portable, full-stack deployment              |
