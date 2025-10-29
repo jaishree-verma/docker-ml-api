@@ -8,7 +8,8 @@ app = FastAPI()
 class Features(BaseModel):
     features: list[float]
 
-model_path = "model.pkl"
+model_path = os.path.join(os.path.dirname(__file__), "model.pkl")
+
 
 if os.path.exists(model_path):
     model = pickle.load(open(model_path, "rb"))
