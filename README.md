@@ -10,7 +10,8 @@ This trained machine learning model with iris dataset which contains measurement
 “Yes! Just give me the measurements of its petals and sepals.”
 
 This model learned patterns from this data - like:
-“Setosa usually has small petals, Virginica has longer ones…”
+“Setosa usually has small petals, Virginica has longer ones… & hence give predictions.”
+
 -> A backend API (FastAPI + Docker) that takes measurements and returns a prediction
 -> A frontend UI (Streamlit) where users can enter values and see the result
 ```
