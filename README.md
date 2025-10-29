@@ -140,7 +140,7 @@ prediction
 To run full app frontend + backend : 
 docker-compose up --build
 ```
-#####  → frontend : http://localhost:8501
+#####  → frontend : [http://localhost:8501](https://docker-ml-api-frontend.streamlit.app/)
 #####  → backend  : [http://localhost:5000/docs](https://docker-ml-api.onrender.com/docs)
 
 #### 8. Final DockerFile 
