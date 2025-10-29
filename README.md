@@ -12,9 +12,9 @@ This trained machine learning model with iris dataset which contains measurement
 This model learned patterns from this data - like:
 “Setosa usually has small petals, Virginica has longer ones… & hence give predictions.”
 ```
-#### -> A frontend UI (Streamlit) where users can enter values and see the result = https://docker-ml-api-frontend.streamlit.app/
+##### -> A frontend UI (Streamlit) where users can enter values and see the result = https://docker-ml-api-frontend.streamlit.app/
 
-#### -> A backend API (FastAPI + Docker) that takes measurements and returns a prediction = https://docker-ml-api.onrender.com/docs
+##### -> A backend API (FastAPI + Docker) that takes measurements and returns a prediction = https://docker-ml-api.onrender.com/docs
 
 
 It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
