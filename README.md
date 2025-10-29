@@ -2,6 +2,18 @@
 
 ### → Live : https://docker-ml-api-frontend.streamlit.app/
 This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker integrated with simple streamlit & requests UI for specific iris dataset. This API turns raw machine learning predictions into a simple, accessible service. 
+```bash
+Imagine you’re handed a flower and asked:
+“Can you tell me which type of Iris flower this is?”
+
+This trained machine learning model with iris dataset which contains measurements of 3 types of Iris flowers: Setosa, Versicolor, Virginica says:
+“Yes! Just give me the measurements of its petals and sepals.”
+
+This model learned patterns from this data - like:
+“Setosa usually has small petals, Virginica has longer ones…”
+-> A backend API (FastAPI + Docker) that takes measurements and returns a prediction
+-> A frontend UI (Streamlit) where users can enter values and see the result
+```
 It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
 
 → Trains model
