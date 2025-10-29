@@ -30,4 +30,4 @@ if st.button("Predict"):
         st.warning("Please enter all four measurements greater than 0.")
 
 st.markdown("---")
-st.caption("Powered by FastAPI + Streamlit • Deployed with Render & Streamlit Cloud")
+st.caption("© 2025 Jaishree Verma. All rights reserved. Powered by FastAPI + Streamlit • Deployed with Render & Streamlit Cloud")
