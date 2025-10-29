@@ -1,6 +1,6 @@
 #  Dockerized ML Model API with FastAPI + Streamlit 
 
-### → Live : 
+### → Live : https://docker-ml-api-frontend.streamlit.app/
 This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker integrated with simple streamlit & requests UI. This API turns raw machine learning predictions into a simple, accessible service. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
 
 → Trains model
