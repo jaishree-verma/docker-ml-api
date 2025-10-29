@@ -1,7 +1,22 @@
-#  Dockerized ML Model API with FastAPI + Streamlit 
+#  Dockerized ML Model (Iris Dataset) with FastAPI + Streamlit + Docker
 
-### → Live : 
-This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker integrated with simple streamlit & requests UI. This API turns raw machine learning predictions into a simple, accessible service. It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
+### → Live : https://docker-ml-api-frontend.streamlit.app/
+This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker integrated with simple streamlit & requests UI for specific iris dataset. This API turns raw machine learning predictions into a simple, accessible service. 
+```bash
+Imagine you’re handed a flower and asked:
+“Can you tell me which type of Iris flower this is?”
+
+This trained machine learning model with iris dataset which contains measurements of 3 types of Iris flowers: Setosa, Versicolor, Virginica says:
+“Yes! Just give me the measurements of its petals and sepals.”
+
+This model learned patterns from this data - like:
+“Setosa usually has small petals, Virginica has longer ones… & hence give predictions.”
+```
+##### -> A frontend UI (Streamlit) where users can enter values and see the result = https://docker-ml-api-frontend.streamlit.app/
+##### -> A backend API (FastAPI + Docker) that takes measurements and returns a prediction = https://docker-ml-api.onrender.com/docs
+
+
+It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
 
 → Trains model
 
@@ -140,7 +155,7 @@ prediction
 To run full app frontend + backend : 
 docker-compose up --build
 ```
-#####  → frontend : http://localhost:8501
+#####  → frontend : [http://localhost:8501](https://docker-ml-api-frontend.streamlit.app/)
 #####  → backend  : [http://localhost:5000/docs](https://docker-ml-api.onrender.com/docs)
 
 #### 8. Final DockerFile 
