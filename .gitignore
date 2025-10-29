@@ -1,5 +1,4 @@
 echo "__pycache__/
-*.pkl
 .env
 node_modules/
 dist/
