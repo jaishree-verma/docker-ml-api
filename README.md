@@ -1,6 +1,8 @@
-<align="center"> Dockerized ML Model (Iris Dataset) with FastAPI + Streamlit + Docker
+<h1 align="center">Dockerized ML Model (Iris Dataset) with FastAPI + Streamlit + Docker</h1>
+
 
 ### → Live : https://docker-ml-api-frontend.streamlit.app/
+
 This project demonstrates how to train a machine learning model using scikit-learn, serve predictions via a FastAPI endpoint, and containerize the entire app using Docker integrated with simple streamlit & requests UI for specific iris dataset. This API turns raw machine learning predictions into a simple, accessible service. 
 ```bash
 Imagine you’re handed a flower and asked:
