@@ -173,3 +173,4 @@ CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000"]
     | Backend   | FastAPI + scikit-learn  | Serves ML predictions via REST API           |
     | Frontend  | Streamlit + requests    | UI for entering features and viewing results |
     | Container | Docker + Docker Compose | Portable, full-stack deployment              |
+    |-----------|-------------------------|----------------------------------------------|
