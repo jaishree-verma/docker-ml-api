@@ -17,7 +17,7 @@ This model learned patterns from this data - like:
 ##### -> A backend API (FastAPI + Docker) that takes measurements and returns a prediction = https://docker-ml-api.onrender.com/docs
 
 
-It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas : 
+It’s a clean, minimal setup perfect for learning how to deploy ML models as APIs with these ideas :
 
 → Trains model
 
